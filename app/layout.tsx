@@ -5,6 +5,7 @@ import type React from "react"; // Import React
 export const metadata: Metadata = {
   title: "ISS Club",
   description: "International Student Society Club",
+  icons: "/isslogo.PNG",
 };
 
 export default function RootLayout({

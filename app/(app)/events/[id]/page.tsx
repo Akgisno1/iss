@@ -3,9 +3,16 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { eventByIdQuery } from "@/sanity/lib/queries";
 import { Event } from "@/types/event";
 
-const EventPage = async ({ params }: { params: { id: string } }) => {
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
+const EventPage = async ({ params }: PageProps) => {
+  const resolvedParams = await params;
   const event = await sanityFetch<Event>({
-    query: eventByIdQuery(params.id),
+    query: eventByIdQuery(resolvedParams.id),
   });
 
   if (!event) {
