@@ -8,6 +8,7 @@ interface PageProps {
     id: string;
   }>;
 }
+export const revalidate = 30;
 
 const EventPage = async ({ params }: PageProps) => {
   const resolvedParams = await params;

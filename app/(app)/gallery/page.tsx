@@ -5,6 +5,8 @@ import { eventsQuery } from "@/sanity/lib/queries";
 import AllEvents from "@/components/AllEvents";
 import { Event } from "@/types/event";
 
+export const revalidate = 30;
+
 const EventsPage = async () => {
   const events = await sanityFetch<Event[]>({ query: eventsQuery });
 
