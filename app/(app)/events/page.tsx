@@ -9,7 +9,7 @@ const EventsPage = async () => {
   const events = await sanityFetch<Event[]>({ query: eventsQuery });
 
   return (
-    <main className=" p-[4vw] pt-[10vw] min-h-screen bg-[#F3E8D8]">
+    <main className=" p-[4vw] pt-[10vw] max-sm:pt-[7vh] min-h-screen bg-[#F3E8D8]">
       <AllEvents events={events} />
     </main>
   );

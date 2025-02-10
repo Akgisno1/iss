@@ -13,12 +13,14 @@ export default function Gallery() {
 
   return (
     <section
-      className="w-screen h-[130vh] overflow-hidden justify-between flex flex-col bg-[#F3E8D8] p-[4vw]"
+      className="w-screen h-[130vh] max-sm:h-[100vh] max-sm:items-start overflow-hidden justify-between flex flex-col bg-[#F3E8D8] p-[4vw]"
       id="gallery"
     >
-      <h2 className=" text-[4vw] font-goudy">Gallery</h2>
+      <h2 className=" text-[4vw] font-goudy max-sm:text-[4vh] max-sm:font-semibold">
+        Gallery
+      </h2>
 
-      <div className="grid gap-[2vw]  grid-cols-4">
+      <div className="grid gap-[2vw] max-sm:grid-cols-2 max-sm:w-[92vw] grid-cols-4">
         <img
           src={images[0]}
           alt="Gallery image 1"
@@ -28,7 +30,7 @@ export default function Gallery() {
         <img
           src={images[1]}
           alt="Gallery image 2"
-          className=" w-full col-span-2 rounded object-cover"
+          className="max-sm:hidden w-full col-span-2 rounded object-cover"
         />
 
         <img
@@ -37,10 +39,16 @@ export default function Gallery() {
           className=" w-full rounded object-cover"
         />
         <img
+          src={images[1]}
+          alt="Gallery image 2"
+          className=" hidden max-sm:flex w-full col-span-2 rounded object-cover"
+        />
+        <img
           src={images[3]}
           alt="Gallery image 4"
           className=" w-full rounded object-cover"
         />
+
         <img
           src={images[4]}
           alt="Gallery image 5"
